@@ -1,6 +1,9 @@
 #!/bin/bash
 
-# install.sh
+# run.sh
+
+# -----------------------------------------
+# System level stuff
 
 # --
 # Install anaconda
@@ -17,10 +20,12 @@
 # rm Anaconda3-2020.11-Linux-x86_64.sh
 
 # --
-# Set CUDA version to 11.0
+# Set CUDA version to 11.1
+# !! 11.0 should work as well.
+# - Matching `cudnn` version to pytorch may be important. cudnn=8.0.5 for pytorch=1.8.0 as of 3/19/21.
 
 # sudo rm /usr/local/cuda
-# sudo ln -s /usr/local/cuda-11.0/ /usr/local/cuda
+# sudo ln -s /usr/local/cuda-11.1/ /usr/local/cuda
 
 # --
 # Upgrade cmake
@@ -30,8 +35,11 @@
 # export PATH=$(pwd)/cmake-3.20.0-rc5-linux-x86_64/bin:$PATH
 # rm cmake-3.20.0-rc5-linux-x86_64.sh
 
+# -----------------------------------------
+# python_essentials installation
+
 # --
-# Setup environment
+# Setup conda environment
 
 conda create -y -n pyg_env python=3.7
 conda activate pyg_env
