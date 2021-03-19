@@ -39,7 +39,7 @@ conda activate pyg_env
 conda install -y pytorch=1.8.0 cudatoolkit=11.1 \
     -c pytorch -c conda-forge
 
-pip install scipy==1.6
+pip install scipy==1.6.1
 
 # --
 # pybind11
@@ -55,3 +55,14 @@ git clone https://github.com/pybind/pybind11
 # test
 
 python test.py
+
+# Should print:
+# tensor([0., 2., 2., 2., 2., 2., 1., 1., 2., 2., 1., 1., 1., 2., 2., 2., 2., 2.,
+#         2., 2., 2., 1., 1., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 1., 1., 2.,
+#         1., 2., 1.], device='cuda:0')
+# tensor([2., 0., 2., 2., 2., 2., 1., 1., 1., 2., 1., 1., 1., 2., 2., 2., 2., 2.,
+#         2., 2., 2., 1., 1., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 3., 1., 1.,
+#         2., 2., 1.], device='cuda:0')
+# tensor([2., 2., 0., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 1., 1., 1., 1., 1.,
+#         2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 3., 2., 1.,
+#         3., 3., 1.], device='cuda:0')
