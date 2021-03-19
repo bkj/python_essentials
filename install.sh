@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# run.sh
+# install.sh
 
 # --
 # Install anaconda
