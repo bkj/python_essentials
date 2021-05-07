@@ -27,15 +27,13 @@ include_directories(
   ./pybind11/include
 )
 
-# set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} --expt-relaxed-constexpr") # Uneeded, for now
-
 # --
 # essentials
 
 CPMAddPackage(
   NAME              Essentials
   GITHUB_REPOSITORY gunrock/essentials
-  GIT_TAG           master
+  GIT_TAG           7f0966e0177531c3d76b5e5c7c0451484691d189
   SOURCE_DIR        ${CMAKE_SOURCE_DIR}/externals/essentials
 )
 
