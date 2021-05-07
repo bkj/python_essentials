@@ -3,6 +3,7 @@ project(pygunrock LANGUAGES C CXX CUDA)
 include(cmake/CPM.cmake)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+set(CMAKE_CUDA_ARCHITECTURES 70)
 
 # --
 # User defined variables
@@ -48,7 +49,6 @@ add_library(
   pygunrock 
   SHARED
   src/interface.cu 
-  ${ESSENTIALS_DIR}/externals/mtx/mmio.cpp
 )
 
 target_include_directories(
