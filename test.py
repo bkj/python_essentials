@@ -37,6 +37,7 @@ predecessors = torch.zeros(csr.shape[0]).int().cuda()
 # --
 # Run
 
+print('start')
 for single_source in [0, 1, 2]:
   _ = distances.zero_()
   _ = predecessors.zero_()

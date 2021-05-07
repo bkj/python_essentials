@@ -3,6 +3,7 @@ project(pygunrock LANGUAGES C CXX CUDA)
 include(cmake/CPM.cmake)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+set(CMAKE_CUDA_ARCHITECTURES 70)
 
 # --
 # User defined variables
@@ -32,8 +33,8 @@ include_directories(
 
 CPMAddPackage(
   NAME              Essentials
-  GITHUB_REPOSITORY gunrock/essentials
-  GIT_TAG           7f0966e0177531c3d76b5e5c7c0451484691d189
+  GITHUB_REPOSITORY bkj/essentials
+  GIT_TAG           python_compatibility
   SOURCE_DIR        ${CMAKE_SOURCE_DIR}/externals/essentials
 )
 
@@ -46,7 +47,7 @@ add_library(
   pygunrock 
   SHARED
   src/interface.cu 
-  ${ESSENTIALS_DIR}/externals/mtx/mmio.cpp
+  ${ESSENTIALS_DIR}/externals
 )
 
 target_include_directories(
